@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card">
+	<span class="checkbox"></span>
+	<form action="{% url 'add_task' %}" method="post">
+		{% csrf_token %}
+		<input type="text" name="title" class="task-input" placeholder="Add task..." />
+	</form>
+	<div style="clear: both;"></div>
+</div>
+
+{% for task in unfinished_tasks %}
+	<div class="card">
+		<a href="{% url 'complete_task' pk=task.pk %}"><span class="checkbox"></span></a>
+		<h2>{{ task.title }}</h2>
+	</div>
+{% endfor %}
+
+<h2 class="green">Completed Tasks</h2>
+
+{% for task in finished_tasks %}
+	<div class="card-completed">
+		<span class="checkbox-completed">&#10004;</span>
+		<h2>{{ task.title }}</h2>
+	</div>
+{% endfor %}
+
+<div style="height: 100px;"></div>
+
+{% endblock %}

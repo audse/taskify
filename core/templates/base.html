@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Taskify</title>
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+<style>
+
+body, html {
+	background: #1488CC; 
+	background: -webkit-linear-gradient(to left, #2B32B2, #1488CC);
+	background: linear-gradient(to left, #2B32B2, #1488CC);
+	/*background: #141E30;
+	background: -webkit-linear-gradient(to right, #243B55, #141E30);
+	bac*/kground: linear-gradient(to right, #243B55, #141E30);
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+}
+
+.nav {
+	height: 60px;
+	line-height: 60px;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.nav a {
+	color: rgba(255,255,255,0.8);
+	text-decoration: none;
+}
+
+.nav a:hover {
+	color: white;
+}
+
+.nav > .brand {
+	float: left;
+	margin-left: 30px;
+}
+
+.nav > .right {
+	float: right;
+	margin-right: 60px;
+}
+
+.nav > .right > a {
+	border-bottom: 1px solid white;
+	margin-left: 20px;
+}
+
+h1 {
+	color: white;
+	font-size: 7vw;
+	font-weight: 300;
+}
+
+.card {
+	background: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.5);
+	border-radius: 50px;
+	color: rgba(255,255,255,0.7);
+	margin: 20px auto;
+	padding: 20px;
+	text-align: left;
+	width: 80vw;
+}
+
+.card-completed {
+	background: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.5);
+	border-radius: 50px;
+	color: #a5db6b;
+	margin: 20px auto;
+	opacity: 0.6;
+	padding: 20px;
+	text-align: left;
+	width: 80vw;
+}
+
+.checkbox {
+	background: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.5);
+	border-radius: 10px;
+	float: left;
+	height: 45px;
+	margin: 5px 20px 5px 20px;
+	width: 45px;
+}
+
+.checkbox-completed {
+	background: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.5);
+	border-radius: 10px;
+	color: #a5db6b;
+	float: left;
+	font-size: 45px;
+	height: 45px;
+	line-height: 45px;
+	margin: 5px 20px 5px 20px;
+	width: 45px;
+	text-align: center;
+
+}
+
+.checkbox:hover {
+	background: rgba(255,255,255,0.2);
+}
+
+.task-input {
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid rgba(255,255,255,0.2);
+	color: white;
+	font-size: 1.5em;
+	font-weight: 400;
+	padding: 10px 0;
+	width: 60vw;
+}
+
+.task-input::placeholder {
+	color: rgba(255,255,255,0.2);
+}
+
+.task-input:focus {
+	outline: none;
+}
+
+.green {
+	color: #a5db6b;
+}
+
+h2 {
+	font-size: 1.5em;
+	font-weight: 400;
+	margin: 0;
+	padding: 10px 0;
+}
+
+p {
+	font-size: 1.2em;
+	font-weight: 400;
+	line-height: 1.6;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="nav">
+	<a href="{% url 'home_page' %}" class="brand"><span style="border: 1px solid white;padding:3px 7px;">TASKIFY</span></a>
+	<span class="right">
+		<a href="{% url 'home_page' %}">Home</a>
+		<a href="{% url 'about_page' %}">About</a>
+	</span>
+</div>
+
+<h1>Taskify</h1>
+
+{% block content %}{% endblock %}
+
+</body>
+</html>
